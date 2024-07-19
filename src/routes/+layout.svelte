@@ -49,7 +49,7 @@
 </script>
 
 
-<div class="w-full h-full min-h-screen flex flex-row bg-[#181514]">
+<div class="w-full h-screen flex flex-row bg-[#181514] overflow-auto">
 
 	<!-- Sidebar -->
 	<div class="h-screen w-[28vh] bg-[#070606] flex flex-col relative transition-all duration-500 ease-in-out px-6 py-4 justify-start items-center altashadow">
@@ -82,7 +82,7 @@
 		</div>
 	</div>
 
-	<div class="w-full h-full flex flex-col">
+	<div class="w-full h-screen flex flex-col overflow-auto">
 		<slot/>
 	</div>
 

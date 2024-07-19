@@ -26,32 +26,39 @@
             <Input placeholder="Chords URL" type="url" name="chords" class="rounded-full text-white"/>
         </div>
 
-        <div>
-            <Textarea class="text-white min-h-[15vh] rounded-xl" placeholder="Lyrics" name="lyrics">
+        <div class="flex flex-row gap-6">
+           <div class="w-full h-full">
+                <Textarea class="text-white h-full rounded-xl" placeholder="Lyrics" name="lyrics">
 
-            </Textarea>
-        </div>
+                </Textarea>
+           </div>
 
-        <div class="w-full flex flex-row gap-6">
+            <div class="flex flex-col gap-6 w-full h-full">
 
-            <Input placeholder="Original Key" type="text" name="original_key" class="rounded-full text-white"/>
+                <Input placeholder="Original Key" type="text" name="original_key" class="rounded-full text-white"/>
+    
+                <Input placeholder="Actual Key" type="text" name="actual_key" class="rounded-full text-white"/>
+    
+                <div class="flex flex-row justify-center items-center gap-2 w-full ">
+                    <Input placeholder="Tempo" type="number" name="tempo" class="rounded-full text-white"/>
+                    <span class="text-white">
+                        Bpm
+                    </span>
+                </div>
 
-            <Input placeholder="Actual Key" type="text" name="actual_key" class="rounded-full text-white"/>
-
-            <div class="flex flex-row justify-center items-center gap-2 w-full ">
-                <Input placeholder="Tempo" type="number" name="tempo" class="rounded-full text-white text-right"/>
-                <span class="text-white">
-                    Bpm
-                </span>
+                <div class="w-full min-h-[25vh]">
+                    <Textarea class="text-white min-h-full rounded-xl" placeholder="Description/Comments" name="description">
+        
+                    </Textarea>
+                </div>
+                
             </div>
-            
+
         </div>
 
-        <div>
-            <Textarea class="text-white min-h-[15vh] rounded-xl" placeholder="Description/Comments" name="description">
+       
 
-            </Textarea>
-        </div>
+        
 
         <Button type="submit" class="text-black font-black hover:bg-black hover:text-white transition-all duration-300 ease-in-out rounded-full">
             Submit

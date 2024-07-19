@@ -1,5 +1,6 @@
 <script>
-    // your script goes here
+    import Button from '$lib/components/ui/button/button.svelte';
+
 
     export let data;
 </script>
@@ -10,8 +11,88 @@
         <h1 class="text-white text-4xl font-bold">{data?.song.title}</h1>
     </div>
 
-    <div class="text-white italic">
-        This page will be expanded with more info about hte individual song
+    <div class="text-white opacity-80">
+        {data?.song?.author}
     </div>
-    
+
+    <div class="flex flex-row justify-center items-center w-full h-full relative">
+        <!-- Lyrics -->
+        <div class="w-full h-full flex flex-col max-h-[80vh] overflow-auto bg-[#070606] rounded-xl px-6 py-6 min-w-[45vw]">
+            <pre class="text-white font-sans tracking-wider">{data?.song.lyrics}</pre>
+        </div>
+        <div class="w-full h-full flex flex-col px-6 py-6 gap-6 relative ">
+            <Button href="{data?.song?.video}"class="bg-black rounded-full px-4 py-2 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black">
+                {data?.song.video}
+            </Button>
+
+            {#if data?.song?.chords}
+                <Button href="{data?.song?.chords}"class="bg-black rounded-full px-4 py-2 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black overflow-auto">
+                    Go to Chords
+                </Button>
+            {/if}
+
+            <div class="w-full flex flex-row gap-4">
+                <div class="flex flex-col gap-4 w-full">
+                    <span class="text-white">
+                        Original Key
+                    </span>
+                    {#if data?.song?.original_key}
+                        <div class="bg-[#e6e6e6] px-4 rounded-full">
+                            {data?.song?.original_key}
+                        </div>
+                    {:else}
+                        <div class="bg-[#e6e6e6] px-4 rounded-full">
+                            -
+                        </div>
+                    {/if}
+                </div>
+
+                <div class="flex flex-col gap-4 w-full">
+                    <span class="text-white">
+                        Actual Key
+                    </span>
+                    {#if data?.song?.actual_key}
+                        <div class="bg-[#e6e6e6] px-4 rounded-full">
+                            {data?.song?.actual_key}
+                        </div>
+                    {:else}
+                        <div class="bg-[#e6e6e6] px-4 rounded-full">
+                            -
+                        </div>
+                    {/if}
+                </div>
+
+                <div class="flex flex-col gap-4 w-full">
+                    <span class="text-white">
+                        Tempo
+                    </span>
+                    <div class="bg-[#e6e6e6] px-4 rounded-full">
+                        {data?.song?.tempo} Bpm
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-full flex flex-col max-h-[30vh] overflow-auto px-4 py-4 bg-black rounded-xl">
+                {#if data?.song?.description}
+                    <span class="text-white">   
+                        {data?.song?.description}
+                    </span>
+                {:else}
+                    <span class="text-white">   
+                        No description added yet.
+                    </span>
+                {/if}
+            </div>
+
+            <div class="w-full flex flex-row gap-4">
+                <Button class="bg-black rounded-full px-4 py-2 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black w-full">
+                    Update
+                </Button>
+
+                <Button class="bg-black rounded-full px-4 py-2 font-medium hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out w-full">
+                    Delete
+                </Button>
+            </div>
+        </div>
+    </div>
 </div>
