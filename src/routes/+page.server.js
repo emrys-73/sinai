@@ -1,0 +1,22 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+import { redirect } from '@sveltejs/kit'
+
+export const load = async ({ locals }) => {
+
+    const getSongs = async () => {
+        const songs = await locals.pb.collection('8_elim_worship_songs').getFullList({
+            sort: '-created',
+        });
+
+        locals.songs = songs
+        return locals.songs
+    }
+
+
+    return {
+        songs: await getSongs(),
+    }
+    
+}

@@ -1,0 +1,60 @@
+<script>
+	import Input from "$lib/components/ui/input/input.svelte";
+    import Button from "$lib/components/ui/button/button.svelte";
+    import Textarea from "$lib/components/ui/textarea/textarea.svelte";
+
+</script>
+
+<div class="w-full h-full flex flex-col py-10 px-16 gap-8">
+    <div>
+        <h1 class="text-white text-4xl font-bold">Add Song</h1>
+    </div>
+
+    <form action="?/addSong" method="POST" class="flex flex-col gap-8">
+
+        <div class="flex flex-row gap-6">
+            <Input placeholder="Title" type="text" name="title" class="rounded-full text-white"/>
+
+            <Input placeholder="Author" type="text" name="author" class="rounded-full text-white"/>
+        </div>
+
+        <div>
+            <Input placeholder="Video URL" type="url" name="video" class="rounded-full text-white"/>
+        </div>
+
+        <div>
+            <Input placeholder="Chords URL" type="url" name="chords" class="rounded-full text-white"/>
+        </div>
+
+        <div>
+            <Textarea class="text-white min-h-[15vh] rounded-xl" placeholder="Lyrics" name="lyrics">
+
+            </Textarea>
+        </div>
+
+        <div class="w-full flex flex-row gap-6">
+
+            <Input placeholder="Original Key" type="text" name="original_key" class="rounded-full text-white"/>
+
+            <Input placeholder="Actual Key" type="text" name="actual_key" class="rounded-full text-white"/>
+
+            <div class="flex flex-row justify-center items-center gap-2 w-full ">
+                <Input placeholder="Tempo" type="number" name="tempo" class="rounded-full text-white text-right"/>
+                <span class="text-white">
+                    Bpm
+                </span>
+            </div>
+            
+        </div>
+
+        <div>
+            <Textarea class="text-white min-h-[15vh] rounded-xl" placeholder="Description/Comments" name="description">
+
+            </Textarea>
+        </div>
+
+        <Button type="submit" class="text-black font-black hover:bg-black hover:text-white transition-all duration-300 ease-in-out rounded-full">
+            Submit
+         </Button>
+    </form>
+</div>
