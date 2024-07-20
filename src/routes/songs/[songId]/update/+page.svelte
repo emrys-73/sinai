@@ -9,7 +9,7 @@
 </script>
 
 
-<div class="w-full h-full flex flex-col py-10 px-16 gap-8">
+<div class="w-full h-full flex flex-col md:py-10 py-8 md:px-16 px-8 gap-8">
     <div>
         <h1 class="text-white text-4xl font-bold">
             <span class="italic bg-primary px-8 text-black rounded-full">
@@ -36,8 +36,8 @@
             <Input placeholder="Chords URL" type="url" value={data?.song.chords} name="chords" class="rounded-full text-white"/>
         </div>
 
-        <div class="flex flex-row gap-6">
-           <div class="w-full h-full">
+        <div class="flex flex-col lg:flex-row gap-6">
+           <div class="w-full h-full min-h-[40vh]">
                 <Textarea class="text-white h-full rounded-xl" placeholder="Lyrics" value={data?.song.lyrics} name="lyrics">
 
                 </Textarea>

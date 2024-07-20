@@ -5,13 +5,12 @@
 
 </script>
 
-<div class="w-full h-full flex flex-col py-10 px-16 gap-8">
+<div class="w-full h-full flex flex-col md:py-10 py-8 md:px-16 px-8 gap-8">
     <div>
         <h1 class="text-white text-4xl font-bold">Add Song</h1>
     </div>
 
     <form action="?/addSong" method="POST" class="flex flex-col gap-8">
-
         <div class="flex flex-row gap-6">
             <Input placeholder="Title" type="text" name="title" class="rounded-full text-white"/>
 
@@ -26,8 +25,8 @@
             <Input placeholder="Chords URL" type="url" name="chords" class="rounded-full text-white"/>
         </div>
 
-        <div class="flex flex-row gap-6">
-           <div class="w-full h-full">
+        <div class="flex md:flex-row flex-col gap-6">
+           <div class="w-full h-full min-h-[40vh]">
                 <Textarea class="text-white h-full rounded-xl" placeholder="Lyrics" name="lyrics">
 
                 </Textarea>

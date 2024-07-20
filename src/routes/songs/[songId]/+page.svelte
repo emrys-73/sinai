@@ -7,7 +7,7 @@
 </script>
 
 
-<div class="w-full h-full flex flex-col py-10 px-16 gap-4">
+<div class="w-full h-full flex flex-col py-10 md:px-16 px-6 gap-4">
     <div>
         <h1 class="text-white text-4xl font-bold">{data?.song.title}</h1>
     </div>
@@ -16,14 +16,16 @@
         {data?.song?.author}
     </div>
 
-    <div class="flex flex-row justify-center items-center w-full h-full relative">
+    <div class="flex flex-col lg:flex-row justify-center items-center w-full h-full relative">
         <!-- Lyrics -->
-        <div class="w-full h-full flex flex-col max-h-[80vh] overflow-auto bg-[#070606] rounded-xl px-6 py-6 min-w-[45vw]">
+        <div class="w-full flex flex-col lg:max-h-[80vh] h-[90vh] overflow-auto bg-[#070606] rounded-xl px-6 py-6 lg:min-w-[35vw] xl:min-w-[40vw]">
             <pre class="text-white font-sans tracking-wider">{data?.song.lyrics}</pre>
         </div>
         <div class="w-full h-full flex flex-col px-6 py-6 gap-6 relative ">
-            <Button href="{data?.song?.video}"class="bg-black rounded-full px-4 py-2 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black">
-                {data?.song.video}
+            <Button href="{data?.song?.video}"class="bg-black rounded-full px-4 py-4 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black overflow-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                  </svg>                  
             </Button>
 
             {#if data?.song?.chords}
