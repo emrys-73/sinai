@@ -32,7 +32,7 @@
 </script>
 
 
-<div class="w-full h-full min-h-screen flex flex-col py-10 px-16 gap-4">
+<div class="w-full h-full min-h-screen flex flex-col py-10 px-16 gap-8">
 
     <!-- Header -->
     <div class="w-full flex-ro flex justify-between items-center">
@@ -92,10 +92,10 @@
             <Table.Caption class="text-white opacity-50">A list of some of our songs</Table.Caption>
             <Table.Header>
               <Table.Row class="text-white">
-                <Table.Head class="w-[10vw] text-white font-bold">Title</Table.Head>
+                <Table.Head class="w-[12vw] text-white font-bold">Title</Table.Head>
                 <Table.Head class="text-white w-[10vw] font-bold">Author</Table.Head>
                 <Table.Head class="text-white w-[20vw] font-bold">Video</Table.Head>
-                <Table.Head class="text-white w-[15vw] font-bold">Chords</Table.Head>
+                <Table.Head class="text-white w-[10vw] font-bold">Chords</Table.Head>
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -115,7 +115,13 @@
                   </Table.Cell>
                   <Table.Cell class="text-white">
                     <a href={song.chords} class="hover:text-primary">
-                      {song.chords}
+                      {#if song.chords}
+                        <span>
+                          See Chords
+                        </span>
+                      {:else }
+                        -
+                      {/if}
                     </a>
                   </Table.Cell>
                 </Table.Row>

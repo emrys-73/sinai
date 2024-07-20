@@ -1,6 +1,7 @@
 <script>
     import Button from '$lib/components/ui/button/button.svelte';
-
+    import * as AlertDialog from "$lib/components/ui/alert-dialog";
+	import { tick } from 'svelte';
 
     export let data;
 </script>
@@ -78,20 +79,44 @@
                         {data?.song?.description}
                     </span>
                 {:else}
-                    <span class="text-white">   
+                    <span class="text-white text-opacity-60">   
                         No description added yet.
                     </span>
                 {/if}
             </div>
 
             <div class="w-full flex flex-row gap-4">
-                <Button class="bg-black rounded-full px-4 py-2 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black w-full">
+                <Button href='/songs/{data?.song?.id}/update' class="bg-black rounded-full px-4 py-2 font-medium hover:bg-primary transition-all duration-300 ease-in-out hover:text-black w-full">
                     Update
                 </Button>
 
-                <Button class="bg-black rounded-full px-4 py-2 font-medium hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out w-full">
-                    Delete
-                </Button>
+                <AlertDialog.Root>
+                    <AlertDialog.Trigger class="bg-black rounded-full px-4 py-2 font-medium hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out w-full text-white text-sm">
+                        Delete
+                    </AlertDialog.Trigger>
+                    <AlertDialog.Content>
+                      <AlertDialog.Header>
+                        <AlertDialog.Title>Are you sure?</AlertDialog.Title>
+                        <AlertDialog.Description>
+                          This will permanently delete <b>{data?.song?.title}</b>
+                          and remove it from our servers.
+                        </AlertDialog.Description>
+                      </AlertDialog.Header>
+                      <AlertDialog.Footer>
+                        <AlertDialog.Cancel>Go Back</AlertDialog.Cancel>
+                        <AlertDialog.Action class="text-black bg-transparent hover:bg-red-600 hover:text-white">
+
+                          <form action="?/deleteSong" method="POST" class="w-full">
+                            <input type="text" name="id" value={data?.song?.id} class="hidden" hidden>
+                            <button type="submit">
+                                Delete
+                            </button>
+                          </form>
+
+                        </AlertDialog.Action>
+                      </AlertDialog.Footer>
+                    </AlertDialog.Content>
+                  </AlertDialog.Root>
             </div>
         </div>
     </div>

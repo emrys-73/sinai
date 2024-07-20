@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+ 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import { redirect } from '@sveltejs/kit'
@@ -18,4 +18,11 @@ export const load = async ({ locals, params }) => {
         song: await getSong(),
     }
     
+}
+
+export const actions = {
+    deleteSong: async ({ locals, params }) => {
+        await locals.pb.collection('8_elim_worship_songs').delete(params.songId);
+        throw redirect(303, '/');
+    },
 }
