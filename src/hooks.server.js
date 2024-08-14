@@ -6,7 +6,7 @@ import Pocketbase from 'pocketbase'
 import { serializeNonPOJOs } from '$lib/utils'
 
 export const handle = async ({ event, resolve }) => {
-    event.locals.pb = new Pocketbase('https://base.astralta.com:443')
+    event.locals.pb = new Pocketbase('https://base.sinai.astralta.com')
     event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '')
 
     try {
@@ -16,7 +16,7 @@ export const handle = async ({ event, resolve }) => {
         }
         
     } catch (_) {
-        event.locals.pb.authStpre.clear()
+        event.locals.pb.authStore.clear()
         event.locals.user = undefined
     }
 

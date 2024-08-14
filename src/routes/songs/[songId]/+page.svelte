@@ -37,26 +37,11 @@
             <div class="w-full flex flex-row gap-4">
                 <div class="flex flex-col gap-4 w-full">
                     <span class="text-white">
-                        Original Key
+                        Key
                     </span>
-                    {#if data?.song?.original_key}
+                    {#if data?.song?.key}
                         <div class="bg-[#e6e6e6] px-4 rounded-full">
-                            {data?.song?.original_key}
-                        </div>
-                    {:else}
-                        <div class="bg-[#e6e6e6] px-4 rounded-full">
-                            -
-                        </div>
-                    {/if}
-                </div>
-
-                <div class="flex flex-col gap-4 w-full">
-                    <span class="text-white">
-                        Actual Key
-                    </span>
-                    {#if data?.song?.actual_key}
-                        <div class="bg-[#e6e6e6] px-4 rounded-full">
-                            {data?.song?.actual_key}
+                            {data?.song?.key}
                         </div>
                     {:else}
                         <div class="bg-[#e6e6e6] px-4 rounded-full">

@@ -17,19 +17,17 @@ export const actions = {
             "spotify": undefined,
             "apple_music": undefined,
             "youtube_music": undefined,
-            "chords": data.chords,
+            "chords_url": data.chords,
+            "chords": undefined,
             "lyrics": data.lyrics,
             "language": undefined,
-            "last_play": undefined,
-            "new": undefined,
-            "original_key": data.original_key,
-            "actual_key": data.actual_key,
+            "key": data.key,
             "tempo": data.tempo,
+            "created_by": "kt4eez6x6sen6d4",
         };
         
-        const newSongRecord = await locals.pb.collection('8_elim_worship_songs').create(newSong);
+        const newSongRecord = await locals.pb.collection('songs').create(newSong);
 
         throw redirect(303, `/`);
-        // console.log(newSongRecord);
     }
 }

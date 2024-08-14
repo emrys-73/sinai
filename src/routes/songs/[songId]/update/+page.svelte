@@ -45,9 +45,9 @@
 
             <div class="flex flex-col gap-6 w-full h-full">
 
-                <Input placeholder="Original Key" type="text" value={data?.song.original_key} name="original_key" class="rounded-full text-white"/>
+                <!-- <Input placeholder="Original Key" type="text" value={data?.song.original_key} name="original_key" class="rounded-full text-white"/> -->
     
-                <Input placeholder="Actual Key" type="text" value={data?.song.actual_key} name="actual_key" class="rounded-full text-white"/>
+                <Input placeholder="Key" type="text" value={data?.song.actual_key} name="key" class="rounded-full text-white"/>
     
                 <div class="flex flex-row justify-center items-center gap-2 w-full ">
                     <Input placeholder="Tempo" type="number" value={data?.song.tempo} name="tempo" class="rounded-full text-white"/>

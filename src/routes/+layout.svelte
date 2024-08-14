@@ -82,7 +82,7 @@
 	<div class="h-screen hidden md:flex md:w-[30vw] lg:w-[25vw] bg-[#070606] flex-col relative transition-all duration-500 ease-in-out px-6 py-4 justify-start items-center altashadow">
 		<div class="py-4 w-full flex justify-start flex-col">
 			<a href="/">
-				<img src="/SongPoolLogo.png" alt="Sinai">
+				<img src="/spmLogo.png" alt="Sinai">
 			</a>
 		</div>
 

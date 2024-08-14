@@ -34,9 +34,9 @@
 
             <div class="flex flex-col gap-6 w-full h-full">
 
-                <Input placeholder="Original Key" type="text" name="original_key" class="rounded-full text-white"/>
+                <!-- <Input placeholder="Original Key" type="text" name="original_key" class="rounded-full text-white"/> -->
     
-                <Input placeholder="Actual Key" type="text" name="actual_key" class="rounded-full text-white"/>
+                <Input placeholder="Key" type="text" name="key" class="rounded-full text-white"/>
     
                 <div class="flex flex-row justify-center items-center gap-2 w-full ">
                     <Input placeholder="Tempo" type="number" name="tempo" class="rounded-full text-white"/>

@@ -6,7 +6,7 @@ import { redirect } from '@sveltejs/kit'
 export const load = async ({ locals }) => {
 
     const getSongs = async () => {
-        const songs = await locals.pb.collection('8_elim_worship_songs').getFullList({
+        const songs = await locals.pb.collection('songs').getFullList({
             sort: '-created',
         });
 

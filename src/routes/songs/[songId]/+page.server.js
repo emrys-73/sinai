@@ -6,7 +6,7 @@ import { redirect } from '@sveltejs/kit'
 export const load = async ({ locals, params }) => {
 
     const getSong = async () => {
-        const song = await locals.pb.collection('8_elim_worship_songs').getOne(params.songId, {
+        const song = await locals.pb.collection('songs').getOne(params.songId, {
             expand: 'relField1,relField2.subRelField',
         });
         
@@ -22,7 +22,7 @@ export const load = async ({ locals, params }) => {
 
 export const actions = {
     deleteSong: async ({ locals, params }) => {
-        await locals.pb.collection('8_elim_worship_songs').delete(params.songId);
+        await locals.pb.collection('songs').delete(params.songId);
         throw redirect(303, '/');
     },
 }
