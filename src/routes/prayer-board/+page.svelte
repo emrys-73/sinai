@@ -8,7 +8,7 @@
    <div class="w-full md:flex-row flex-col md:gap-6 gap-8 flex justify-between items-center">
        <!-- Title -->
        <div class="flex flex-col w-full">
-           <h1 class="text-white text-4xl font-bold">Rankings</h1>
+           <h1 class="text-white text-4xl font-bold">Prayer board</h1>
        </div>
    </div>
 </div>
