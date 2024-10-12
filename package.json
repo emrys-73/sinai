@@ -47,6 +47,7 @@
 		"ai": "^3.2.32",
 		"bits-ui": "^0.21.12",
 		"clsx": "^2.1.1",
+		"javascript-lp-solver": "^0.4.24",
 		"marked": "^13.0.2",
 		"openai": "^4.52.7",
 		"openai-edge": "^1.2.2",
