@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
     import { Button } from "$lib/components/ui/button/index.js";
+
+    const message = "Work in progress. Stay tuned ;)"
   </script>
 
 <div class="w-full h-full min-h-screen flex flex-col md:py-10 py-8 md:px-16 px-8 gap-8">
@@ -17,6 +19,9 @@
             </Button>
         </div>
     </div>
-    <div class="w-full md:flex-row flex-col md:gap-6 gap-8 flex items-start justify-start">
+    <div class="w-full h-full justify-center items-center flex flex-col ">
+        <span class="text-white opacity-80 italic">
+            {message}
+        </span>
     </div>
 </div>
