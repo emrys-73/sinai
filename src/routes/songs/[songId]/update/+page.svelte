@@ -33,7 +33,7 @@
         </div>
 
         <div>
-            <Input placeholder="Chords URL" type="url" value={data?.song.chords} name="chords" class="rounded-full text-white"/>
+            <Input placeholder="Chords URL" type="url" value={data?.song.chords_url} name="chords" class="rounded-full text-white"/>
         </div>
 
         <div class="flex flex-col lg:flex-row gap-6">
@@ -47,7 +47,7 @@
 
                 <!-- <Input placeholder="Original Key" type="text" value={data?.song.original_key} name="original_key" class="rounded-full text-white"/> -->
     
-                <Input placeholder="Key" type="text" value={data?.song.actual_key} name="key" class="rounded-full text-white"/>
+                <Input placeholder="Key" type="text" value={data?.song.key} name="key" class="rounded-full text-white"/>
     
                 <div class="flex flex-row justify-center items-center gap-2 w-full ">
                     <Input placeholder="Tempo" type="number" value={data?.song.tempo} name="tempo" class="rounded-full text-white"/>
